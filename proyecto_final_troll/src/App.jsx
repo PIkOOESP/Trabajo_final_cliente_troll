@@ -105,7 +105,7 @@ function App() {
               ©1999-2025 Venture Panaderias
             </div>
 
-            <div className="col-md-4 text-end">
+            <div className="col-md-4 d-flex justify-content-end">
               <a href="#top">
                 <img src="/src/assets/imagenes/Logo_blanco.png" width="50"/>
               </a>

@@ -91,6 +91,10 @@ footer{
   margin: auto;
   width: 1000px;
   height: 1000px;
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
 }
 .popup1{
   background-image: url("assets/popups/popup1.png");

@@ -23,14 +23,14 @@ function App() {
         </div>
 
         <nav className="navbar navbar-dark px-4">
-            <button className="btn btn-light me-3" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
-              <img src="/src/assets/imagenes/barra_lateral.png" width="35"/>
-            </button>
+          <button className="btn btn-light me-3" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+            <img src="/src/assets/imagenes/barra_lateral.png" width="35"/>
+          </button>
 
-            <a className="navbar-brand d-flex align-items-center gap-3" href="index.html">
-              <img className="logo" src="/src/assets/imagenes/Logo_blanco.png" width="60"/>
-              <h1 className="m-0 fs-3">Venture Panaderias</h1>
-            </a>
+          <a className="navbar-brand d-flex align-items-center gap-3" href="index.html">
+            <img className="logo" src="/src/assets/imagenes/Logo_blanco.png" width="60"/>
+            <h1 className="m-0 fs-3">Venture Panaderias</h1>
+          </a>
         </nav>
       </header>
 

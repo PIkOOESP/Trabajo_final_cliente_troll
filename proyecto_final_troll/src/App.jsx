@@ -5,12 +5,13 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/index.esm.js';
 
-let lastPopUp = "";
+let lastPopUp = "a";
 
 function App() {
   return (
     <>
       <Header />
+      <PopUp />
       <Main />
       <Footer />   
     </>
@@ -20,7 +21,7 @@ function App() {
 function Header(){
   return(
     <>
-      <header onClick={soundOrAdd()==0? mostrarPopUp() : ""}>
+      <header onClick={() => soundOrAdd()==0? mostrarPopUp() : ""}>
         <div className="offcanvas offcanvas-start" tabIndex="-1" id="menuLateral">
           <div className="offcanvas-header">
             <img className="logo" src="/src/assets/imagenes/Logo_negro.png" width="80"/>
@@ -152,8 +153,8 @@ function Footer(){
 function PopUp(){
   return (
     <>
-      <div id='popup'>
-        <button>X</button>
+      <div id='popup' className='popup hidden'>
+        <button className="rounded-circle ps-2 pe-2 border-2" onClick={() => ocultarPopUp()}>X</button>
       </div>
     </>
   )
@@ -169,13 +170,23 @@ function mostrarPopUp(){
     "popup6",
     "popup7"
   ]
-  let clase = clases[Math.random()*4];
+  let clase = clases[Math.floor(Math.random()*6)];
 
   const popup = document.getElementById("popup");
   if(popup){
+    popup.classList.remove("hidden")
     popup.classList.remove(lastPopUp)
     popup.classList.add(clase)
     popup.classList.add("activo")
+    lastPopUp = clase
+  }
+}
+
+function ocultarPopUp(){
+  const popup = document.getElementById("popup");
+  if(popup) {
+    popup.classList.remove("activo")
+    popup.classList.add("hidden")
   }
 }
 

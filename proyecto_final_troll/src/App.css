@@ -85,17 +85,27 @@ footer{
 }
 
 .hidden{
-  display: hidden;
+  display: none;
 }
+
+.active{
+  display:block;
+}
+
 .popup{
-  margin: auto;
+  margin-left: 400px;
   width: 1000px;
-  height: 1000px;
-  background-size: contain; 
+  height: 700px;
   background-repeat: no-repeat;
-  background-position: center;
-  position: sticky;
+  background-size: cover;
+  position: fixed;
+  z-index: 9999;
 }
+
+.popup button{
+  background-color: var(--gris-oscuro);
+}
+
 .popup1{
   background-image: url("assets/popups/popup1.png");
 }
@@ -103,7 +113,7 @@ footer{
   background-image: url("assets/popups/popup2.png");
 }
 .popup3{
-  background-image: url("assets/popups/popu31.png");
+  background-image: url("assets/popups/popup3.png");
 }
 .popup4{
   background-image: url("assets/popups/popup4.png");

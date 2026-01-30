@@ -87,4 +87,30 @@ footer{
 .hidden{
   display: hidden;
 }
+.popup{
+  margin: auto;
+  width: 1000px;
+  height: 1000px;
+}
+.popup1{
+  background-image: url("assets/popups/popup1.png");
+}
+.popup2{
+  background-image: url("assets/popups/popup2.png");
+}
+.popup3{
+  background-image: url("assets/popups/popu31.png");
+}
+.popup4{
+  background-image: url("assets/popups/popup4.png");
+}
+.popup5{
+  background-image: url("assets/popups/popup5.png");
+}
+.popup6{
+  background-image: url("assets/popups/popup6.png");
+}
+.popup7{
+  background-image: url("assets/popups/popup7.png");
+}
 

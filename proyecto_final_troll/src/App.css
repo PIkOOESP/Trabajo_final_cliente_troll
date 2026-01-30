@@ -94,7 +94,7 @@ footer{
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
-  position: absolute;
+  position: sticky;
 }
 .popup1{
   background-image: url("assets/popups/popup1.png");

@@ -1,42 +1,85 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+
+:root {
+  --gris-claro :#f3f3f3;
+  --gris: #D9D9D9;
+  --gris-oscuro: #B4B4B4;
+  --marron: #664E35;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, .navbar-brand span {
+  font-family: "Pirata One", system-ui;
+}
+
+h2 {
+  font-family: "Eagle Lake", serif;
+}
+
+.offcanvas {
+  background-color: var(--gris);
+}
+
+.offcanvas a {
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.offcanvas a:hover {
+  background-color: var(--gris-oscuro);
+}
+
+.principal{
+  background-color: var(--gris);
+}
+
+.card{
+  background-color: var(--gris-claro);
+  transition: transform 0.4s ease;
+}
+
+.card:hover{
+  transform: scale(1.08);
+}
+
+.badge {
+  background-color: var(--gris)!important;
+  color: black;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  animation: animacionLogo 1.5s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes animacionLogo {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+footer{
+  background-color: var(--marron);
 }
 
-.card {
-  padding: 2em;
+.contacto {
+  background-color: var(--gris-claro);
 }
 
-.read-the-docs {
-  color: #888;
+.navbar{
+  background-color: var(--marron);
 }

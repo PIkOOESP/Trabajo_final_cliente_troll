@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -60,8 +60,10 @@ function Nav(){
 
 function Main(){
   const [audio, setAudio] = useState("/src/assets/sonidos/FAH.mp3");
+  const audioRef = useRef(null);
+
   function randomSound(){
-    const audioelemento = document.getElementById("audio")
+   
     let audios=[
       "AnornioLobato.mp3",
       "carlos3.mp3",
@@ -75,15 +77,18 @@ function Main(){
       "pitido_coche.mp3",
       "risa.mp3"
     ]
-    setAudio(audios[Math.floor(Math.random()*10)])
+    setAudio("/src/assets/sonidos/"+audios[Math.floor(Math.random()*audios.length)])
 
-    audioelemento.play()
+    setTimeout(() => {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }, 0);
   }
 
   return(
     <>
-      <main onClick={() => soundOrAdd==0 ? mostrarPopUp() : randomSound()}>
-        <audio src={audio} id="audio" type="audio/mp3"></audio>
+      <main onClick={() => soundOrAdd()==0 ? mostrarPopUp() : randomSound()}>
+        <audio ref={audioRef} src={audio} id="audio" type="audio/mp3"></audio>
         <section className="container my-5">
           <h2 className="text-center mb-5">Productos Destacados</h2>
 

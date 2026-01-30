@@ -8,7 +8,17 @@ import 'bootstrap/js/index.esm.js';
 function App() {
   return (
     <>
-      <header>
+      <Header />
+      <Main />
+      <Footer />   
+    </>
+  )
+}
+
+function Header(){
+  return(
+    <>
+      <header onClick={soundOrAdd()==0? "" : ""}>
         <div className="offcanvas offcanvas-start" tabIndex="-1" id="menuLateral">
           <div className="offcanvas-header">
             <img className="logo" src="/src/assets/imagenes/Logo_negro.png" width="80"/>
@@ -16,31 +26,45 @@ function App() {
           </div>
 
           <div className="offcanvas-body text-center fs-4">
-            <a href="panaderia.html" className="d-block mb-4 text-decoration-none text-dark">Panadería</a>
-            <a href="bolleria.html" className="d-block mb-4 text-decoration-none text-dark">Bollería</a>
-            <a href="envios.html" className="d-block mb-4 text-decoration-none text-dark">Envíos</a>
+            <a href="#" onClick={() => randomWindow()} className="d-block mb-4 text-decoration-none text-dark">Panadería</a>
+            <a href="#" onClick={() => randomWindow()} className="d-block mb-4 text-decoration-none text-dark">Bollería</a>
+            <a href="#" onClick={() => randomWindow()} className="d-block mb-4 text-decoration-none text-dark">Envíos</a>
           </div>
         </div>
 
-        <nav className="navbar navbar-dark px-4">
-          <button className="btn btn-light me-3" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
-            <img src="/src/assets/imagenes/barra_lateral.png" width="35"/>
-          </button>
-
-          <a className="navbar-brand d-flex align-items-center gap-3" href="index.html">
-            <img className="logo" src="/src/assets/imagenes/Logo_blanco.png" width="60"/>
-            <h1 className="m-0 fs-3">Venture Panaderias</h1>
-          </a>
-        </nav>
+        <Nav />
       </header>
+    </>
+  );
+}
 
+function Nav(){
+  return(
+    <>
+      <nav className="navbar navbar-dark px-4">
+        <button className="btn btn-light me-3" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+          <img src="/src/assets/imagenes/barra_lateral.png" width="35"/>
+        </button>
+
+        <a className="navbar-brand d-flex align-items-center gap-3" href="#" onClick={() => randomWindow()}>
+          <img className="logo" src="/src/assets/imagenes/Logo_blanco.png" width="60"/>
+          <h1 className="m-0 fs-3">Venture Panaderias</h1>
+        </a>
+      </nav>
+    </>
+  )
+}
+
+function Main(){
+  return(
+    <>
       <main>
         <section className="container my-5">
           <h2 className="text-center mb-5">Productos Destacados</h2>
 
           <div className="row justify-content-center g-5">
             <div className="col-lg-4 col-md-6">
-              <div className="card text-center border-0 shadow-sm h-100 rounded-4">
+              <div className="card text-center border-0 shadow-sm h-100 rounded-4" onClick={() => randomWindow()}>
                 <img src="/src/assets/imagenes/producto_destacado_1.jpg" className="card-img-top"/>
                 <div className="card-body">
                   <p className="fs-5">Pack Malvaviscos Variados</p>
@@ -50,7 +74,7 @@ function App() {
             </div>
 
             <div className="col-lg-4 col-md-6">
-              <div className="card text-center border-0 shadow-sm h-100 rounded-4">
+              <div className="card text-center border-0 shadow-sm h-100 rounded-4" onClick={() => randomWindow()}>
                 <img src="/src/assets/imagenes/producto_destacado_2.jpg" className="card-img-top"/>
                 <div className="card-body">
                   <p className="fs-5">Pack Malvavisco Triple</p>
@@ -60,7 +84,7 @@ function App() {
             </div>
 
             <div className="col-lg-4 col-md-6">
-              <div className="card text-center border-0 shadow-sm h-100 rounded-4">
+              <div className="card text-center border-0 shadow-sm h-100 rounded-4" onClick={() => randomWindow()}>
                 <img src="/src/assets/imagenes/producto_destacado_3.jpg" className="card-img-top"/>
                 <div className="card-body">
                   <p className="fs-5">Pack Malvavisco Triple Navideño</p>
@@ -86,14 +110,20 @@ function App() {
           </div>
         </section>
       </main>
+    </>
+  )
+}
 
+function Footer(){
+  return(
+    <>
       <footer className="text-white">
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-md-4">
               <p>Calle Falsa 132, España</p>
               <p>Teléfono: 612-345-678</p>
-              <div className="d-flex gap-2">
+              <div className="d-flex gap-2" onClick={() => randomWindow()}>
                 <img src="/src/assets/imagenes/rrss.png" width="20"/>
                 <img src="/src/assets/imagenes/insta.png" width="20"/>
                 <img src="/src/assets/imagenes/facebook.png" width="20"/>
@@ -112,9 +142,40 @@ function App() {
             </div>
           </div>
         </div>
-      </footer>   
+      </footer>  
     </>
   )
+}
+
+function randomWindow(){
+  const configuracion = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
+  const enlaces =[
+    "https://www.youtube.com/watch?v=lbsllaehnkE",
+    "https://taburetecojo.com/",
+    "https://media.cnn.com/api/v1/images/stellar/prod/cnne-212344-monkey-selfie.jpeg?c=original",
+    "https://rule34dle.org/es/game",
+    "https://www.reddit.com/r/programacion/",
+    "https://longdogechallenge.com/",
+    "http://www.staggeringbeauty.com/",
+    "https://cat-bounce.com/",
+    "https://clickclickclick.click/",
+    "https://papertoilet.com/",
+    "https://fallingfalling.com/",
+    "https://www.koalastothemax.com/",
+    "https://isitchristmas.com/",
+    "https://www.thelastpageoftheinternet.com/",
+    "https://drawing.garden/"
+  ]
+  const numero = Math.floor(Math.random()*15);
+  window.open(enlaces[numero-1],"jijijiji",configuracion)
+}
+
+function soundOrAdd(){
+  return Math.round(Math.random())
+}
+
+function randomSound(){
+  
 }
 
 export default App

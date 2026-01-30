@@ -5,6 +5,8 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/index.esm.js';
 
+let lastPopUp = "";
+
 function App() {
   return (
     <>
@@ -18,7 +20,7 @@ function App() {
 function Header(){
   return(
     <>
-      <header onClick={soundOrAdd()==0? "" : ""}>
+      <header onClick={soundOrAdd()==0? mostrarPopUp() : ""}>
         <div className="offcanvas offcanvas-start" tabIndex="-1" id="menuLateral">
           <div className="offcanvas-header">
             <img className="logo" src="/src/assets/imagenes/Logo_negro.png" width="80"/>
@@ -147,6 +149,36 @@ function Footer(){
   )
 }
 
+function PopUp(){
+  return (
+    <>
+      <div id='popup'>
+        <button>X</button>
+      </div>
+    </>
+  )
+}
+
+function mostrarPopUp(){
+  const clases = [
+    "popup1",
+    "popup2",
+    "popup3",
+    "popup4",
+    "popup5",
+    "popup6",
+    "popup7"
+  ]
+  let clase = clases[Math.random()*4];
+
+  const popup = document.getElementById("popup");
+  if(popup){
+    popup.classList.remove(lastPopUp)
+    popup.classList.add(clase)
+    popup.classList.add("activo")
+  }
+}
+
 function randomWindow(){
   const configuracion = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
   const enlaces =[
@@ -166,7 +198,7 @@ function randomWindow(){
     "https://www.thelastpageoftheinternet.com/",
     "https://drawing.garden/"
   ]
-  const numero = Math.floor(Math.random()*15);
+  const numero = Math.floor(Math.random()*14);
   window.open(enlaces[numero-1],"jijijiji",configuracion)
 }
 

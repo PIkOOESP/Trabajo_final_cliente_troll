@@ -59,9 +59,31 @@ function Nav(){
 }
 
 function Main(){
+  const [audio, setAudio] = useState("/src/assets/sonidos/FAH.mp3");
+  function randomSound(){
+    const audioelemento = document.getElementById("audio")
+    let audios=[
+      "AnornioLobato.mp3",
+      "carlos3.mp3",
+      "desaparecer.mp3",
+      "FAH.mp3",
+      "goofy.mp3",
+      "klara1.mp3",
+      "klara3.mp3",
+      "niggaa.mp3",
+      "piano.mp3",
+      "pitido_coche.mp3",
+      "risa.mp3"
+    ]
+    setAudio(audios[Math.floor(Math.random()*10)])
+
+    audioelemento.play()
+  }
+
   return(
     <>
-      <main>
+      <main onClick={() => soundOrAdd==0 ? mostrarPopUp() : randomSound()}>
+        <audio src={audio} id="audio" type="audio/mp3"></audio>
         <section className="container my-5">
           <h2 className="text-center mb-5">Productos Destacados</h2>
 
@@ -217,8 +239,6 @@ function soundOrAdd(){
   return Math.round(Math.random())
 }
 
-function randomSound(){
-  
-}
+
 
 export default App

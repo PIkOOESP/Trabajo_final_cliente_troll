@@ -21,7 +21,7 @@ function App() {
 function Header(){
   return(
     <>
-      <header onClick={() => soundOrAdd()==0? mostrarPopUp() : ""}>
+      <header onClick={() => mostrarPopUp()}>
         <div className="offcanvas offcanvas-start" tabIndex="-1" id="menuLateral">
           <div className="offcanvas-header">
             <img className="logo" src="/src/assets/imagenes/Logo_negro.png" width="80"/>
@@ -147,7 +147,7 @@ function Main(){
 function Footer(){
   return(
     <>
-      <footer className="text-white">
+      <footer className="text-white" onClick={() => mostrarPopUp()}>
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-md-4">
